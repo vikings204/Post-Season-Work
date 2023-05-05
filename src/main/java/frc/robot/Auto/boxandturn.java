@@ -27,10 +27,10 @@ import frc.robot.RobotContainer;
 public class boxandturn extends SequentialCommandGroup {
     public boxandturn(RobotContainer robot) {
     
-                PathPlannerTrajectory trajectory2 = PathPlanner.loadPath("New Path", new PathConstraints(4,3));
+                PathPlannerTrajectory trajectory2 = PathPlanner.loadPath("New Path", new PathConstraints(1.0,3));
                 PathPlannerTrajectory trajectory3 = PathPlanner.loadPath("New New Path", new PathConstraints(2,1.75));
                 
-                var thetaController = new ProfiledPIDController(Constants.AutoConstants.kPThetaController,0, 0,Constants.AutoConstants.kThetaControllerConstraints);
+                ProfiledPIDController thetaController = new ProfiledPIDController(Constants.AutoConstants.kPThetaController,0, 0,Constants.AutoConstants.kThetaControllerConstraints);
                 
                 thetaController.enableContinuousInput(0, 2 * Math.PI);
                 
@@ -41,7 +41,7 @@ public class boxandturn extends SequentialCommandGroup {
                     Constants.Swerve.swerveKinematics,
                     new PIDController(Constants.AutoConstants.kPXController, 0, 0),
                     new PIDController(Constants.AutoConstants.kPYController, 0, 0),
-                    new PIDController(Constants.AutoConstants.kPThetaController, 0.005, 0),
+                    new PIDController(.4, 0.007, 0),
                     robot.s_Swerve::setModuleStates,
                     robot.s_Swerve);
 

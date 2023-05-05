@@ -93,7 +93,31 @@ public class RobotContainer {
        new JoystickButton(CONTROLLER, 2).whileTrue(
 
        new PPSwerveControllerCommand(
-        tracker.getTrajectory(s_Swerve.getPose().getTranslation(), new Translation2d(1.5,1.5), s_Swerve.getYaw(),new Rotation2d(0)),
+        tracker.getTrajectory(s_Swerve.getPose().getTranslation(), new Translation2d(s_Swerve.getPose().getTranslation().getX()+1,s_Swerve.getPose().getTranslation().getY()), new Rotation2d(0),new Rotation2d(0)),
+        s_Swerve::getPose,
+        Constants.Swerve.swerveKinematics,
+        new PIDController(Constants.AutoConstants.kPXController, 0, 0),
+        new PIDController(Constants.AutoConstants.kPYController, 0, 0),
+        new PIDController(Constants.AutoConstants.kPThetaController, 0, 0),
+        s_Swerve::setModuleStates,
+        s_Swerve)
+       );
+       new JoystickButton(CONTROLLER, 5).whileTrue(
+
+       new PPSwerveControllerCommand(
+        tracker.getTrajectory(s_Swerve.getPose().getTranslation(), new Translation2d(s_Swerve.getPose().getTranslation().getX(),s_Swerve.getPose().getTranslation().getY()+1), new Rotation2d(0),new Rotation2d(0)),
+        s_Swerve::getPose,
+        Constants.Swerve.swerveKinematics,
+        new PIDController(Constants.AutoConstants.kPXController, 0, 0),
+        new PIDController(Constants.AutoConstants.kPYController, 0, 0),
+        new PIDController(Constants.AutoConstants.kPThetaController, 0, 0),
+        s_Swerve::setModuleStates,
+        s_Swerve)
+       );
+       new JoystickButton(CONTROLLER, 6).whileTrue(
+
+       new PPSwerveControllerCommand(
+        tracker.getTrajectory(s_Swerve.getPose().getTranslation(), new Translation2d(s_Swerve.getPose().getTranslation().getX()+1,s_Swerve.getPose().getTranslation().getY()+1), new Rotation2d(0),new Rotation2d(0)),
         s_Swerve::getPose,
         Constants.Swerve.swerveKinematics,
         new PIDController(Constants.AutoConstants.kPXController, 0, 0),
