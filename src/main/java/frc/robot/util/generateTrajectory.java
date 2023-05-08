@@ -46,7 +46,7 @@ public PathPlannerTrajectory getTrajectory(Translation2d current1, Translation2d
     System.out.println("Current Pose X: "+current1.getX());
     System.out.println("Current Pose Y: "+current1.getY());
     System.out.println("Target Pose X: "+target1.getX());
-    System.out.println("Target Pose y: "+target1.getX());
+    System.out.println("Tarasdfsget Pose y: "+target1.getX());
     return PathPlanner.generatePath(
         new PathConstraints(1.5, 3),
         
