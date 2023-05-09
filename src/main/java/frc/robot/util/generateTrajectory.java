@@ -23,6 +23,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
 import frc.robot.subsystems.Swerve;
 import edu.wpi.first.math.util.Units;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 
 public class generateTrajectory {
@@ -43,12 +44,13 @@ public PathPlannerTrajectory getTrajectory(Translation2d current1, Translation2d
     target_angle = r1.getDegrees();//degrees;
     target = target1;
     current = current1;
-    System.out.println("Current Pose X: "+current1.getX());
-    System.out.println("Current Pose Y: "+current1.getY());
-    System.out.println("Target Pose X: "+target1.getX());
-    System.out.println("Tarasdfsget Pose y: "+target1.getX());
+         
+    
+   // System.out.println("Current Pose Y: "+current1.getY());
+    //System.out.println("Target Pose X: "+target1.getX());
+    //System.out.println("Tarasdfsget Pose y: "+target1.getX());
     return PathPlanner.generatePath(
-        new PathConstraints(1.5, 3),
+        new PathConstraints(1, 3),
         
         new PathPoint(
             current,

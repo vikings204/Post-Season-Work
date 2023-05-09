@@ -32,7 +32,7 @@ import com.pathplanner.lib.PathPlanner;
 import com.pathplanner.lib.PathPlannerTrajectory;
 import com.pathplanner.lib.PathPoint;
 import com.pathplanner.lib.commands.PPSwerveControllerCommand;
-
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 /*
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -93,12 +93,14 @@ public class RobotContainer {
        new JoystickButton(CONTROLLER, 2).whileTrue(
 
        new PPSwerveControllerCommand(
-        tracker.getTrajectory(s_Swerve.getPose().getTranslation(), new Translation2d(s_Swerve.getPose().getTranslation().getX()+1,s_Swerve.getPose().getTranslation().getY()), new Rotation2d(0),new Rotation2d(0)),
+
+
+        tracker.getTrajectory(s_Swerve.getPose().getTranslation(), new Translation2d(1.5,1.5), new Rotation2d(0),new Rotation2d(0)),
         s_Swerve::getPose,
         Constants.Swerve.swerveKinematics,
-        new PIDController(Constants.AutoConstants.kPXController, 0, 0),
-        new PIDController(Constants.AutoConstants.kPYController, 0, 0),
-        new PIDController(Constants.AutoConstants.kPThetaController, 0, 0),
+        new PIDController(.8, 0, 0),
+        new PIDController(.8, 0, 0),
+        new PIDController(.8, 0.007, 0),
         s_Swerve::setModuleStates,
         s_Swerve)
        );
