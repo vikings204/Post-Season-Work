@@ -27,7 +27,7 @@ import frc.robot.RobotContainer;
 public class boxandturn extends SequentialCommandGroup {
     public boxandturn(RobotContainer robot) {
     
-                PathPlannerTrajectory trajectory2 = PathPlanner.loadPath("New Path", new PathConstraints(1.0,3));
+                PathPlannerTrajectory trajectory2 = PathPlanner.loadPath("New New New New New New Path", new PathConstraints(1.0,3));
                 PathPlannerTrajectory trajectory3 = PathPlanner.loadPath("New New Path", new PathConstraints(2,1.75));
                 
                 ProfiledPIDController thetaController = new ProfiledPIDController(Constants.AutoConstants.kPThetaController,0, 0,Constants.AutoConstants.kThetaControllerConstraints);

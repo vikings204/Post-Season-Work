@@ -47,9 +47,9 @@ public final class Constants {
 
  
   public static final class Swerve {
-    public static final double fastDriveSpeedMultiplier = 1;
-    public static final double normalDriveSpeedMultiplier = 0.6;
-    public static final double slowDriveSpeedMultiplier = 0.3;
+    public static final double fastDriveSpeedMultiplier = 0.85;
+    public static final double normalDriveSpeedMultiplier = 0.85;
+    public static final double slowDriveSpeedMultiplier = 0.85 ;
 
     //SET ME Each Run...
     public static final double robotOffset = 0.0;
@@ -82,8 +82,8 @@ public final class Constants {
     public static final double voltageComp = 12.0;
 
     /* Swerve Current Limiting */
-    public static final int angleContinuousCurrentLimit = 20;
-    public static final int driveContinuousCurrentLimit = 30;
+    public static final int angleContinuousCurrentLimit = 2;
+    public static final int driveContinuousCurrentLimit = 2;
 
     /* Angle Motor PID Values */
     public static final double angleKP = 0.01;
@@ -141,7 +141,7 @@ public final class Constants {
       public static final int angleMotorID = 13;
       //public static final int canCoderID = 1;
       //public static final Rotation2d angleOffset = Rotation2d.fromDegrees(296.67);
-      public static final Rotation2d angleOffset = Rotation2d.fromDegrees(42.58);
+      public static final Rotation2d angleOffset = Rotation2d.fromDegrees(312.58);
       public static final SwerveModuleConstants constants =
           new SwerveModuleConstants(driveMotorID, angleMotorID, angleOffset);
     }
